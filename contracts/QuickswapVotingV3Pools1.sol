@@ -62,10 +62,10 @@ contract QuickswapVotingV3Pools1 {
             liquidity
         );
         if(token0 == address(QUICK)) {
-            quickAmount_ += amount0;
+            quickAmount_ = amount0;
         }
         else {
-            quickAmount_ += amount1;
+            quickAmount_ = amount1;
         }
     }
 
