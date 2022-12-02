@@ -1,10 +1,5 @@
-/**
- *Submitted for verification at polygonscan.com on 2022-07-13
-*/
-
 //SPDX-License-Identifier: Unlicense
-pragma solidity >=0.7.5;
-pragma abicoder v2;
+pragma solidity 0.8.17;
 
 interface IERC20 {
     function name() external view returns (string memory);
@@ -106,8 +101,8 @@ contract QuickswapVoting9 {
     for(uint256 i; i < length; i++) {
       IStakingRewards stakingRewardContract = IStakingRewards(quickLPStaking[i]);
       IUniswapV2Pair uniToken = IUniswapV2Pair(stakingRewardContract.stakingToken());
-      
-      //balance_ += quick;
+      uint256 quick = stakingRewardContract.balanceOf(_owner) * NEWQUICK.balanceOf(address(uniToken)) / uniToken.totalSupply();
+      balance_ += quick;
     }    
   }
 

@@ -1,6 +1,5 @@
 //SPDX-License-Identifier: Unlicense
-pragma solidity >=0.7.5;
-pragma abicoder v2;
+pragma solidity 0.8.17;
 
 interface IERC20 {
     function name() external view returns (string memory);
